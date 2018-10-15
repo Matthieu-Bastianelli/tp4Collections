@@ -1,5 +1,7 @@
 package tp4Collections;
 
+import java.util.Arrays;
+
 
 public class PizzaMemDAO implements IPizzaDao{
 	
@@ -8,17 +10,24 @@ public class PizzaMemDAO implements IPizzaDao{
 	private Pizza[] tableauDePizza;
 
 	
+//	/**
+//	 * Constructeur :	
+//	 * @param nomBddPizza
+//	 * @param tableauDePizza
+//	 */
+//	public PizzaMemDAO(String nomBddPizza, Pizza[] tableauDePizza) {
+//		super();
+//		this.nomBddPizza = nomBddPizza;
+//		this.tableauDePizza = tableauDePizza;
+//	}
 	/**
-	 * Constructeur :	
-	 * @param nomBddPizza
-	 * @param tableauDePizza
+	 * Constructeur
 	 */
-	public PizzaMemDAO(String nomBddPizza, Pizza[] tableauDePizza) {
+	public PizzaMemDAO() {
 		super();
-		this.nomBddPizza = nomBddPizza;
-		this.tableauDePizza = tableauDePizza;
+		this.tableauDePizza = new Pizza[]{new Pizza("MAR","Margarita",8), new Pizza("4FR","4 Fromage",10), new Pizza("CAL","Calzone",9), new Pizza("JOF","Jambon Oeuf Fromage",7)};		
 	}
-
+	
 	//Implémentation de l'interface IPizzaDao :
 	
 	/**
@@ -72,6 +81,13 @@ public class PizzaMemDAO implements IPizzaDao{
 //		return tableauDePizza;
 //	}
 	
+	@Override
+	public String toString() {
+		//Tri du tableau
+		Arrays.sort(tableauDePizza);
+		return "PizzaMemDAO [tableauDePizza=" + Arrays.toString(tableauDePizza) + "]";
+	}
+
 	public String getNomBddPizza() {
 		return nomBddPizza;
 	}

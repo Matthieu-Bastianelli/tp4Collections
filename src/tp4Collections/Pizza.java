@@ -1,6 +1,7 @@
 package tp4Collections;
 
-public class Pizza {
+
+public class Pizza implements Comparable<Pizza>{
 	
 	/**
 	 * Attributs
@@ -38,6 +39,40 @@ public class Pizza {
 		return "Pizza [code=" + code + ", nom=" + nom + ", prix=" + prix + "\u20ac ]\n";
 	}
 	
+	/**
+	 * Comparateur :
+	 */
+
+
+	@Override
+	public int compareTo(Pizza pizzaCompare) {
+		
+		
+		if (this.getPrix() > pizzaCompare.getPrix()) {
+			return 1;
+			}else if (this.getPrix() < pizzaCompare.getPrix()){
+				return (-1);
+				}else {
+					return 0;
+		}
+	}
+
+//	@Override
+//	public int compare(Pizza pizza1, Pizza pizza2) {
+//		
+////		Pizza pizza1 = (Pizza) objet1;
+////		Pizza pizza2 = (Pizza) objet2;
+//		
+//		//Tri par rapport au prix des Pizzas
+//		if (pizza1.getPrix() > pizza2.getPrix()) {
+//			return 1;
+//			}else if (pizza1.getPrix() < pizza2.getPrix()){
+//				return (-1);
+//				}else {
+//					return 0;
+//		}
+//		
+//	}
 
 	//--------------------------------------------------------------------------------------
 	// Getter et Setter :
@@ -65,6 +100,12 @@ public class Pizza {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
+
+
+
+
+
+
 	
 	//--------------------------------------------------------------------------------------
 
