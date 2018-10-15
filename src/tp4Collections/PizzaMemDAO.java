@@ -84,7 +84,7 @@ public class PizzaMemDAO implements IPizzaDao{
 	@Override
 	public String toString() {
 		//Tri du tableau
-		Arrays.sort(tableauDePizza);
+		Arrays.sort(this.tableauDePizza);
 		return "PizzaMemDAO [tableauDePizza=" + Arrays.toString(tableauDePizza) + "]";
 	}
 
